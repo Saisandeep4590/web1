@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multi User Login</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(120deg,#4facfe,#00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    width:300px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    padding:10px;
+    width:100%;
+    background:#4facfe;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+</style>
+
+<script>
+
+function login(){
+
+let users = {
+    "User1":"User1@123",
+    "User3":"User3@123"
+};
+
+let username = document.getElementById("user").value;
+let password = document.getElementById("pass").value;
+
+if(users[username] === password){
+
+document.body.innerHTML = `
+<h2 style="text-align:center;">Welcome ${username}</h2>
+<div style="text-align:center;">
+<img src="pic.jpg" width="500">
+</div>
+`;
+
+}else{
+alert("Invalid login");
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+<h2>Login</h2>
+
+<input type="text" id="user" placeholder="Username">
+<input type="password" id="pass" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</body>
+</html>
